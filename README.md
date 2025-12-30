@@ -138,7 +138,7 @@ function eventcore:trigger {args:{type:"broadcast",data:{msg:"Sunucu başlıyor!
 
 <h3>🔊 Sound</h3>
 <pre><code>
-function eventcore:trigger {args:{type:"playsound",data:{sound:"entity.player.levelup",target:"@a"}}}
+**function eventcore:trigger {args:{type:"playsound",data:{sound:"entity.player.levelup",target:"@a",source:"master"}}}**
 </code></pre>
 
 <h3>👤 Teleport</h3>
@@ -157,12 +157,12 @@ function eventcore:trigger {  args:{    type:"give",    data:{      target:"@p",
 
 <h3>📊 Score</h3>
 <pre><code>
-function eventcore:trigger {args:{type:"score_add",data:{target:"@p",obj:"coins",val:10}}}
+function eventcore:trigger {args:{type:"score_add",data:{obj:"coins"}}}
 </code></pre>
 
 <h3>🩸 Bossbar</h3>
 <pre><code>
-function eventcore:trigger {args:{type:"bossbar_create",data:{id:"event:timer",name:"Etkinlik",max:300,color:"red"}}}
+function eventcore:trigger {args:{type:"bossbar_new",data:{id:"event:timer",name:"Etkinlik",val:300,color:"red",max:2}}}
 </code></pre>
 
 <h3>👹 Entity</h3>
@@ -177,7 +177,7 @@ function eventcore:trigger {args:{type:"cmd", data:{command:"say Merhaba Dünya"
 
 <h3>🔁 FUNC — Fonksiyon Çağırma</h3>
 <pre><code>
-function eventcore:trigger {args:{type:"func", data:{command:"eventcore:subfunctions/start_round"}}}
+function eventcore:trigger {args:{type:"func",data:{ns:"#minecraft",path:"load"}}}
 </code></pre>
 
 <hr>
