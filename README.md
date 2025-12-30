@@ -9,7 +9,7 @@
 
 **Minecraft için gelişmiş, modüler ve kullanımı kolay event sistemi**
 
-[Özellikler](#-özellikler) • [Kurulum](#-kurulum) • [Kullanım](#-kullanım) • [Dökümanlar](#-dökümanlar) • [Katkıda Bulunma](#-katkıda-bulunma)
+[Özellikler](#-özellikler) • [Kurulum](#-kurulum) • [Dökümanlar](#-dökümanlar) • [Katkıda Bulunma](#-katkıda-bulunma)
 
 </div>
 
@@ -22,7 +22,6 @@
 - [Kurulum](#-kurulum)
 - [Hızlı Başlangıç](#-hızlı-başlangıç)
 - [Dökümanlar](#-dökümanlar)
-- [Komut Kategorileri](#-komut-kategorileri)
 - [Örnekler](#-örnekler)
 - [Katkıda Bulunma](#-katkıda-bulunma)
 - [Lisans](#-lisans)
@@ -74,26 +73,14 @@
 - Eşya verme/alma
 - NBT desteği
 
-### 📊 Skorboard & XP
+### 📊 Skorboard
 - Skor yönetimi
-- XP/Seviye verme
-
-### 🌍 Dünya Yönetimi
-- Zaman ayarlama
-- Hava durumu
-- Blok doldurma
 
 </td>
 </tr>
 </table>
 
 ### 🔥 Gelişmiş Özellikler
-
-- 🐉 **Entity Yönetimi** - Spawn, NBT düzenleme, silme
-- 📊 **Bossbar Sistemi** - Dinamik bossbar oluşturma
-- 👥 **Takım Sistemi** - Takım oluşturma ve yönetme
-- 🏆 **Advancement** - İlerleme yönetimi
-- 💥 **Özel Efektler** - Patlama, şimşek, iyileştirme
 - ⚙️ **Komut Çalıştırma** - Function ve raw command desteği
 
 ---
@@ -261,27 +248,12 @@ function eventcore:trigger {args:{type:"give", data:{target:"@p", item:"diamond"
 
 #### NBT ile Eşya Verme
 ```mcfunction
-function eventcore:trigger {args:{type:"give", data:{target:"@p", item:"diamond_sword", count:1, nbt:'{Enchantments:[{id:"sharpness",lvl:5}]}'}}}
+execute as X at @s run function eventcore:trigger {args:{type:"give", data:{target:"@p", item:"diamond_sword", count:1, nbt:'[minecraft:enchantments={"minecraft:sharpness":5}]'}}}
 ```
 
 #### Eşya Temizleme
 ```mcfunction
 function eventcore:trigger {args:{type:"clear", data:{target:"@p", item:"dirt", count:64}}}
-```
-
-</details>
-
-<details>
-<summary><b>🌟 XP Komutları</b></summary>
-
-#### XP Puan Verme
-```mcfunction
-function eventcore:trigger {args:{type:"xp", data:{target:"@p", amount:100}}}
-```
-
-#### Seviye Verme
-```mcfunction
-function eventcore:trigger {args:{type:"xp", data:{target:"@p", amount:5, mode:"levels"}}}
 ```
 
 </details>
@@ -302,74 +274,6 @@ function eventcore:trigger {args:{type:"score_add", data:{target:"@p", obj:"coin
 #### Skor Çıkarma
 ```mcfunction
 function eventcore:trigger {args:{type:"score_remove", data:{target:"@p", obj:"health", val:10}}}
-```
-
-</details>
-
-<details>
-<summary><b>🌍 Dünya Yönetimi</b></summary>
-
-#### Zaman Ayarlama
-```mcfunction
-function eventcore:trigger {args:{type:"time", data:{time:"day"}}}
-function eventcore:trigger {args:{type:"time", data:{time:"noon"}}}
-function eventcore:trigger {args:{type:"time", data:{time:"night"}}}
-```
-
-#### Hava Durumu
-```mcfunction
-function eventcore:trigger {args:{type:"weather", data:{weather:"clear"}}}
-function eventcore:trigger {args:{type:"weather", data:{weather:"rain", dur:6000}}}
-```
-
-#### Blok Doldurma
-```mcfunction
-function eventcore:trigger {args:{type:"fill", data:{x1:0, y1:64, z1:0, x2:10, y2:64, z2:10, block:"stone"}}}
-```
-
-</details>
-
-<details>
-<summary><b>🐉 Entity Yönetimi</b></summary>
-
-#### Basit Spawn
-```mcfunction
-function eventcore:trigger {args:{type:"summon", data:{entity:"zombie", x:0, y:100, z:0}}}
-```
-
-#### NBT ile Spawn
-```mcfunction
-function eventcore:trigger {args:{type:"summon", data:{entity:"armor_stand", x:0, y:100, z:0, nbt:'{CustomName:"Test",NoGravity:1b}'}}}
-```
-
-#### Entity Silme
-```mcfunction
-function eventcore:trigger {args:{type:"remove", data:{target:"@e[type=zombie,limit=1]"}}}
-```
-
-</details>
-
-<details>
-<summary><b>💥 Özel Efektler</b></summary>
-
-#### Patlama
-```mcfunction
-function eventcore:trigger {args:{type:"explosion", data:{x:0, y:100, z:0, radius:3}}}
-```
-
-#### Yıldırım
-```mcfunction
-function eventcore:trigger {args:{type:"lightning", data:{x:0, y:100, z:0}}}
-```
-
-#### İyileştirme
-```mcfunction
-function eventcore:trigger {args:{type:"heal", data:{target:"@p", amp:10}}}
-```
-
-#### Açlık Giderme
-```mcfunction
-function eventcore:trigger {args:{type:"hunger", data:{target:"@p", lvl:5}}}
 ```
 
 </details>
