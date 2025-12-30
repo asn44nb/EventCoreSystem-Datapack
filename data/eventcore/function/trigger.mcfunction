@@ -27,6 +27,7 @@ execute if data storage eventcore:sys args{type:"effect_clear"} run function eve
 execute if data storage eventcore:sys args{type:"xp"} run function eventcore:xp/add with storage eventcore:sys args.data
 
 # Eşyalar
+execute if data storage eventcore:sys args{type:"give_raw"} run function eventcore:item/give2 with storage eventcore:sys args.data
 execute if data storage eventcore:sys args{type:"give"} run function eventcore:item/give with storage eventcore:sys args.data
 execute if data storage eventcore:sys args{type:"clear"} run function eventcore:item/clear with storage eventcore:sys args.data
 
@@ -44,3 +45,4 @@ execute if data storage eventcore:sys args.data{debug:true} run tellraw @a[tag=d
 
 
 data remove storage eventcore:sys args
+
