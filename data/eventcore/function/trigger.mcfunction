@@ -14,6 +14,16 @@ execute if data storage eventcore:sys args{type:"actionbar"} run function eventc
 execute if data storage eventcore:sys args{type:"playsound"} run function eventcore:sound/playsound with storage eventcore:sys args.data
 execute if data storage eventcore:sys args{type:"particle"} run function eventcore:sound/particle with storage eventcore:sys args.data
 
+# Entity
+execute if data storage eventcore:sys args{type:"summon"} run function eventcore:entity/summon with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"remove"} run function eventcore:entity/remove with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"data_merge"} run function eventcore:entity/data_merge with storage eventcore:sys args.data
+
+# Bossbar
+execute if data storage eventcore:sys args{type:"bossbar_new"} run function eventcore:bossbar/new with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"bossbar_set"} run function eventcore:bossbar/set with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"bossbar_del"} run function eventcore:bossbar/delete with storage eventcore:sys args.data
+
 # Oyuncu
 execute if data storage eventcore:sys args{type:"tp"} run function eventcore:player/teleport with storage eventcore:sys args.data
 execute if data storage eventcore:sys args{type:"gamemode"} run function eventcore:player/gamemode with storage eventcore:sys args.data
@@ -45,4 +55,5 @@ execute if data storage eventcore:sys args.data{debug:true} run tellraw @a[tag=d
 
 
 data remove storage eventcore:sys args
+
 
