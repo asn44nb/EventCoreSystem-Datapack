@@ -108,7 +108,7 @@
 
 1. **Datapack'i İndirin**
 ```bash
-git clone https://github.com/yourusername/eventcore.git
+git clone https://github.com/asn44nb/EventCoreSystem-Datapack.git
 ```
 
 2. **Dünyaya Ekleyin**
@@ -466,14 +466,7 @@ eventcore/
             ├── player/                     # Oyuncu yönetimi
             ├── effect/                     # Potion efektleri
             ├── item/                       # Eşya yönetimi
-            ├── xp/                         # XP sistemi
             ├── score/                      # Skorboard
-            ├── world/                      # Dünya yönetimi
-            ├── entity/                     # Entity yönetimi
-            ├── bossbar/                    # Bossbar sistemi
-            ├── team/                       # Takım sistemi
-            ├── advancement/                # İlerleme
-            ├── special/                    # Özel efektler
             └── command/                    # Komut çalıştırıcı
 ```
 
@@ -500,7 +493,7 @@ Katkılarınızı bekliyoruz! İşte nasıl katkıda bulunabilirsiniz:
 
 ### Bug Bildirimi
 
-Hata bulduysanız [Issue açın](../../issues) ve şunları belirtin:
+Hata bulduysanız [Issue açın](https://github.com/asn44nb/EventCoreSystem-Datapack/issues) ve şunları belirtin:
 - Minecraft versiyonu
 - Hata açıklaması
 - Nasıl tekrarlanır
@@ -543,9 +536,8 @@ Bu projeyi beğendiyseniz ⭐ vermeyi unutmayın!
 
 ## 📞 İletişim & Destek
 
-- **GitHub Issues**: [Hata Bildirin veya Öneride Bulunun](../../issues)
-- **Discussions**: [Tartışmalara Katılın](../../discussions)
-- **Wiki**: [Detaylı Dokümantasyon](../../wiki)
+- **GitHub Issues**: [Hata Bildirin veya Öneride Bulunun](https://github.com/asn44nb/EventCoreSystem-Datapack/issues)
+- **Wiki**: [Detaylı Dokümantasyon](https://github.com/asn44nb/EventCoreSystem-Datapack/wiki)
 
 ---
 
