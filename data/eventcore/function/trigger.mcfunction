@@ -23,6 +23,9 @@ execute if data storage eventcore:sys args{type:"kick"} run function eventcore:p
 execute if data storage eventcore:sys args{type:"effect_add"} run function eventcore:effect/add with storage eventcore:sys args.data
 execute if data storage eventcore:sys args{type:"effect_clear"} run function eventcore:effect/clear with storage eventcore:sys args.data
 
+# XP
+execute if data storage eventcore:sys args{type:"xp"} run function eventcore:xp/add with storage eventcore:sys args.data
+
 # Eşyalar
 execute if data storage eventcore:sys args{type:"give"} run function eventcore:item/give with storage eventcore:sys args.data
 execute if data storage eventcore:sys args{type:"clear"} run function eventcore:item/clear with storage eventcore:sys args.data
@@ -38,5 +41,6 @@ execute if data storage eventcore:sys args{type:"cmd"} run function eventcore:co
 
 # Debug
 execute if data storage eventcore:sys args.data{debug:true} run tellraw @a[tag=debug] [{"text":"[DEBUG] ","color":"gray"},{"storage":"eventcore:sys","nbt":"args.type","color":"green"}]
+
 
 data remove storage eventcore:sys args
