@@ -138,7 +138,8 @@ function eventcore:trigger {args:{type:"broadcast",data:{msg:"Sunucu başlıyor!
 
 <h3>🔊 Sound</h3>
 <pre><code>
-**function eventcore:trigger {args:{type:"playsound",data:{sound:"entity.player.levelup",target:"@a",source:"master"}}}**
+function eventcore:trigger {args:{type:"playsound",data:{sound:"entity.player.levelup",target:"@a",source:"master"}}}
+
 </code></pre>
 
 <h3>👤 Teleport</h3>
@@ -152,7 +153,7 @@ Minecraft 1.21 ve sonrası sürümlerde <b>give</b> komutlarında klasik NBT yer
 <b>item components (bileşenler)</b> kullanılır.
 </p>
 <pre><code>
-function eventcore:trigger {  args:{    type:"give",    data:{      target:"@p",      item:"minecraft:diamond_sword",      count:1,      nbt:'[minecraft:enchantments={"minecraft:sharpness":5}]'}}}
+function eventcore:trigger {args:{type:"give",data:{target:"@p",item:"minecraft:diamond_sword",count:1,nbt:'[minecraft:enchantments={"minecraft:sharpness":5}]'}}}
 </code></pre>
 
 <h3>📊 Score</h3>
@@ -222,7 +223,7 @@ eventcore/
 
 <h2 id="lisans">📜 Lisans</h2>
 
-<p>MIT License © 2024 EventCore</p>
+<p>MIT License © 2025 Legends11</p>
 
 <hr>
 
