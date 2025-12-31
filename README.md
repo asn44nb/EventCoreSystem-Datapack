@@ -139,7 +139,6 @@ function eventcore:trigger {args:{type:"broadcast",data:{msg:"Sunucu başlıyor!
 <h3>🔊 Sound</h3>
 <pre><code>
 function eventcore:trigger {args:{type:"playsound",data:{sound:"entity.player.levelup",target:"@a",source:"master"}}}
-
 </code></pre>
 
 <h3>👤 Teleport</h3>
