@@ -436,7 +436,8 @@
               "type": "minecraft:text",
               "key": "data",
               "label": "Veri",
-              "max_length": 1e+34
+              "initial": "{}",
+              "max_length": 2000000000
             },
             {
               "type": "minecraft:text",
