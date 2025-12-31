@@ -18,6 +18,7 @@ execute if data storage eventcore:sys args{type:"particle"} run function eventco
 execute if data storage eventcore:sys args{type:"summon"} run function eventcore:entity/summon with storage eventcore:sys args.data
 execute if data storage eventcore:sys args{type:"remove"} run function eventcore:entity/remove with storage eventcore:sys args.data
 execute if data storage eventcore:sys args{type:"data_merge"} run function eventcore:entity/data_merge with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"modify"} run function eventcore:entity/modify with storage eventcore:sys args.data
 
 # Bossbar
 execute if data storage eventcore:sys args{type:"bossbar_new"} run function eventcore:bossbar/new with storage eventcore:sys args.data
@@ -28,6 +29,7 @@ execute if data storage eventcore:sys args{type:"bossbar_del"} run function even
 execute if data storage eventcore:sys args{type:"tp"} run function eventcore:player/teleport with storage eventcore:sys args.data
 execute if data storage eventcore:sys args{type:"gamemode"} run function eventcore:player/gamemode with storage eventcore:sys args.data
 execute if data storage eventcore:sys args{type:"kick"} run function eventcore:player/kick with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"freeze"} run function eventcore:player/freeze with storage eventcore:sys args.data
 
 # Efektler
 execute if data storage eventcore:sys args{type:"effect_add"} run function eventcore:effect/add with storage eventcore:sys args.data
@@ -53,7 +55,4 @@ execute if data storage eventcore:sys args{type:"cmd"} run function eventcore:co
 # Debug
 execute if data storage eventcore:sys args.data{debug:true} run tellraw @a[tag=debug] [{"text":"[DEBUG] ","color":"gray"},{"storage":"eventcore:sys","nbt":"args.type","color":"green"}]
 
-
 data remove storage eventcore:sys args
-
-
