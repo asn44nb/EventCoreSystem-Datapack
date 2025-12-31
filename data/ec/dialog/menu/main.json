@@ -454,7 +454,7 @@
               "label": "Çalıştır",
               "action": {
                 "type": "minecraft:dynamic/run_command",
-                "template": "/execute as $(name) run function eventcore:trigger {args:{type:\"$(type)\",data:$(data)}}"
+                "template": "/execute as $(name) run function eventcore:trigger {args:{type:\"$(type)\",data:\"$(data)\"}}"
               }
             }
           ]
