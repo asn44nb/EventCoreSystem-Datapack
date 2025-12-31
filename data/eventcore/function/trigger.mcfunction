@@ -58,9 +58,10 @@ execute if data storage eventcore:sys args{type:"func"} run function eventcore:c
 execute if data storage eventcore:sys args{type:"cmd"} run function eventcore:command/run with storage eventcore:sys args.data
 
 # Debug
-playsound minecraft:entity.player.levelup player @s ~ ~ ~ 1 1 1
+execute if data storage ec:debug {sound:1b} run playsound minecraft:entity.player.levelup player @s ~ ~ ~ 1 1 1
 
 data remove storage eventcore:sys args
+
 
 
 
