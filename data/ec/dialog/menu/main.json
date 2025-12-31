@@ -429,21 +429,21 @@
               "key": "name",
               "label": "Ad",
               "initial": "@s",
-              "max_length": 500000,
+              "max_length": 1000000000,
               "multiline": {}
             },
             {
               "type": "minecraft:text",
-              "key": "data",
-              "label": "Veri",
-              "initial": "{}",
-              "max_length": 2000000000
+              "key": "id",
+              "label": "Depo",
+              "initial": ":",
+              "max_length": 1000000000
             },
             {
               "type": "minecraft:text",
-              "key": "type",
-              "label": "Tip",
-              "max_length": 90000
+              "key": "nbt",
+              "label": "NBT Verisi",
+              "max_length": 2000000000
             }
           ],
           "can_close_with_escape": true,
@@ -454,7 +454,7 @@
               "label": "Çalıştır",
               "action": {
                 "type": "minecraft:dynamic/run_command",
-                "template": "/execute as $(name) run function eventcore:trigger {args:{type:\"$(type)\",data:\"$(data)\"}}"
+                "template": "/execute as $(name) run function eventcore:trigger with storage $(id) $(nbt)"
               }
             }
           ]
