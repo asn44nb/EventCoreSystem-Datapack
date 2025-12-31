@@ -14,6 +14,11 @@ execute if data storage eventcore:sys args{type:"actionbar"} run function eventc
 execute if data storage eventcore:sys args{type:"playsound"} run function eventcore:sound/playsound with storage eventcore:sys args.data
 execute if data storage eventcore:sys args{type:"particle"} run function eventcore:sound/particle with storage eventcore:sys args.data
 
+# Timer
+execute if data storage eventcore:sys args{type:"delay"} run function eventcore:timer/delay with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"repeat"} run function eventcore:timer/repeat with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"stop"} run function eventcore:timer/stop with storage eventcore:sys args.data
+
 # Entity
 execute if data storage eventcore:sys args{type:"summon"} run function eventcore:entity/summon with storage eventcore:sys args.data
 execute if data storage eventcore:sys args{type:"remove"} run function eventcore:entity/remove with storage eventcore:sys args.data
@@ -56,3 +61,4 @@ execute if data storage eventcore:sys args{type:"cmd"} run function eventcore:co
 execute if data storage eventcore:sys args.data{debug:true} run tellraw @a[tag=debug] [{"text":"[DEBUG] ","color":"gray"},{"storage":"eventcore:sys","nbt":"args.type","color":"green"}]
 
 data remove storage eventcore:sys args
+
