@@ -58,7 +58,8 @@ execute if data storage eventcore:sys args{type:"func"} run function eventcore:c
 execute if data storage eventcore:sys args{type:"cmd"} run function eventcore:command/run with storage eventcore:sys args.data
 
 # Debug
-execute if data storage eventcore:sys args.data{debug:true} run tellraw @a[tag=debug] [{"text":"[DEBUG] ","color":"gray"},{"storage":"eventcore:sys","nbt":"args.type","color":"green"}]
+execute if data storage eventcore:sys args.data{debug:true} run tellraw @a [{"text":"[DEBUG] ","color":"gray"},{"storage":"eventcore:sys","nbt":"args.type","color":"green"}]
 
 data remove storage eventcore:sys args
+
 
