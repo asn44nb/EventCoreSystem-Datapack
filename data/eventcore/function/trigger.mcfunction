@@ -58,9 +58,10 @@ execute if data storage eventcore:sys args{type:"func"} run function eventcore:c
 execute if data storage eventcore:sys args{type:"cmd"} run function eventcore:command/run with storage eventcore:sys args.data
 
 # Debug
-execute if data storage eventcore:sys args.data{debug:true} run tellraw @a [{"text":"[DEBUG] ","color":"gray"},{"text":"Çalıştı:","color":"gold"}," ",{"storage":"eventcore:sys","nbt":"args.type","color":"green"}]
+playsound minecraft:entity.player.levelup player @s ~ ~ ~ 1 1 1
 
 data remove storage eventcore:sys args
+
 
 
 
