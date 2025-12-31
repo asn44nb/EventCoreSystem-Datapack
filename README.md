@@ -118,7 +118,7 @@ function eventcore:trigger {args:{type:"broadcast",data:{msg:"EventCore aktif!"}
 message  → broadcast / whisper / title / actionbar
 sound    → playsound
 player   → tp / gamemode / kick
-items    → give / clear (1.21+ bileşen sistemi)
+items    → give / clear / give_raw (1.21+ bileşen sistemi)
 xp       → xp / levels
 score    → set / add / remove
 bossbar  → create / update / remove
@@ -158,17 +158,17 @@ function eventcore:trigger {args:{type:"give",data:{target:"@p",item:"minecraft:
 
 <h3>📊 Score</h3>
 <pre><code>
-function eventcore:trigger {args:{type:"score_add",data:{obj:"coins"}}}
+function eventcore:trigger {args:{type:"score_add",data:{obj:"coins",type:"dummy",name:{"text":"Coins"}}}}
 </code></pre>
 
 <h3>🩸 Bossbar</h3>
 <pre><code>
-function eventcore:trigger {args:{type:"bossbar_new",data:{id:"event:timer",name:"Etkinlik",val:300,color:"red",max:2}}}
+function eventcore:trigger {args:{type:"bossbar_new",data:{id:"event:timer",name:"Etkinlik",val:300,color:"red",max:2,user:"@s"}}}
 </code></pre>
 
 <h3>👹 Entity</h3>
 <pre><code>
-function eventcore:trigger {args:{type:"spawn",data:{entity:"minecraft:zombie",x:0,y:64,z:0,count:1}}}
+execute as X positioned ~ ~5 ~ run function eventcore:trigger {args:{type:"summon",data:{entity:"minecraft:arrow",x:"~",y:"~",z:"~",nbt:{}}}}
 </code></pre>
 
 <h3>⌨️ CMD — Ham Komut Çalıştırma</h3>
@@ -179,6 +179,15 @@ function eventcore:trigger {args:{type:"cmd", data:{command:"say Merhaba Dünya"
 <h3>🔁 FUNC — Fonksiyon Çağırma</h3>
 <pre><code>
 function eventcore:trigger {args:{type:"func",data:{ns:"#minecraft",path:"load"}}}
+</code></pre>
+
+<h3>🎒 Item (Raw)</h3>
+<p>
+Minecraft 1.21 ve sonrası sürümlerde <b>give</b> komutlarında klasik NBT yerine
+<b>item components (bileşenler)</b> kullanılır.
+</p>
+<pre><code>
+execute as X run function eventcore:trigger {args:{type:"give_raw",data:{target:"@s",item:"minecraft:diamond_sword",count:1}}}
 </code></pre>
 
 <hr>
