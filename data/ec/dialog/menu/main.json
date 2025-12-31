@@ -1,0 +1,464 @@
+{
+  "type": "minecraft:multi_action",
+  "title": "🎮 EventCore - Trigger Panel",
+  "can_close_with_escape": true,
+  "pause": false,
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": "Aşağıdan tetiklemek istediğin EventCore türünü seç. (Repo'daki /data/eventcore/function örnekleriyle uyumlu)"
+  },
+  "exit_action": {
+    "label": "❌ Kapat",
+    "action": {
+      "type": "minecraft:suggest_command",
+      "command": "/say EventCore panel kapatıldı."
+    }
+  },
+  "actions": [
+    {
+      "label": "📢 Broadcast (message)",
+      "action": {
+        "type": "minecraft:show_dialog",
+        "dialog": {
+          "type": "minecraft:multi_action",
+          "title": "📢 Broadcast Gönder",
+          "can_close_with_escape": true,
+          "pause": false,
+          "inputs": [
+            {
+              "type": "minecraft:text",
+              "key": "msg",
+              "label": "💬 Mesaj",
+              "max_length": 200
+            },
+            {
+              "type": "minecraft:text",
+              "key": "p",
+              "label": "🎯 Hedef (ör: @a / @p)",
+              "initial": "@a",
+              "max_length": 32
+            }
+          ],
+          "actions": [
+            {
+              "label": "📨 Gönder",
+              "action": {
+                "type": "minecraft:dynamic/run_command",
+                "template": "/function eventcore:trigger {args:{type:\"broadcast\",data:{msg:\"$(msg)\",target:\"$(p)\"}}}"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "🔊 Playsound (sound)",
+      "action": {
+        "type": "minecraft:show_dialog",
+        "dialog": {
+          "type": "minecraft:multi_action",
+          "title": "🔊 Playsound Çal",
+          "can_close_with_escape": true,
+          "pause": false,
+          "inputs": [
+            {
+              "type": "minecraft:text",
+              "key": "sound",
+              "label": "🔉 Sound ID (örn: entity.player.levelup)",
+              "max_length": 200
+            },
+            {
+              "type": "minecraft:text",
+              "key": "p",
+              "label": "🎯 Hedef (ör: @a)",
+              "initial": "@a",
+              "max_length": 32
+            }
+          ],
+          "actions": [
+            {
+              "label": "▶️ Çal",
+              "action": {
+                "type": "minecraft:dynamic/run_command",
+                "template": "/function eventcore:trigger {args:{type:\"playsound\",data:{sound:\"$(sound)\",target:\"$(p)\",source:\"master\"}}}"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "🎯 Teleport (player → tp)",
+      "action": {
+        "type": "minecraft:show_dialog",
+        "dialog": {
+          "type": "minecraft:multi_action",
+          "title": "🎯 Işınla (tp)",
+          "can_close_with_escape": true,
+          "pause": false,
+          "inputs": [
+            {
+              "type": "minecraft:text",
+              "key": "target",
+              "label": "🎯 Hedef Oyuncu (ör: @p)",
+              "initial": "@p",
+              "max_length": 32
+            },
+            {
+              "type": "minecraft:text",
+              "key": "x",
+              "label": "X",
+              "initial": "~",
+              "max_length": 16
+            },
+            {
+              "type": "minecraft:text",
+              "key": "y",
+              "label": "Y",
+              "initial": "~",
+              "max_length": 16
+            },
+            {
+              "type": "minecraft:text",
+              "key": "z",
+              "label": "Z",
+              "initial": "~",
+              "max_length": 16
+            }
+          ],
+          "actions": [
+            {
+              "label": "🚀 Işınla",
+              "action": {
+                "type": "minecraft:dynamic/run_command",
+                "template": "/function eventcore:trigger {args:{type:\"tp\",data:{target:\"$(target)\",x:$(x),y:$(y),z:$(z)}}}"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "🎒 Give Item (items → give)",
+      "action": {
+        "type": "minecraft:show_dialog",
+        "dialog": {
+          "type": "minecraft:multi_action",
+          "title": "🎒 Give Item",
+          "can_close_with_escape": true,
+          "pause": false,
+          "inputs": [
+            {
+              "type": "minecraft:text",
+              "key": "target",
+              "label": "🎯 Hedef (ör: @p)",
+              "initial": "@p",
+              "max_length": 32
+            },
+            {
+              "type": "minecraft:text",
+              "key": "item",
+              "label": "🪙 Item ID (örn: minecraft:diamond_sword)",
+              "max_length": 200
+            },
+            {
+              "type": "minecraft:text",
+              "key": "count",
+              "label": "🔢 Adet",
+              "initial": "1",
+              "max_length": 6
+            },
+            {
+              "type": "minecraft:text",
+              "key": "nbt",
+              "label": "📦 NBT / component (opsiyonel)",
+              "initial": "",
+              "max_length": 1000
+            }
+          ],
+          "actions": [
+            {
+              "label": "🎁 Ver",
+              "action": {
+                "type": "minecraft:dynamic/run_command",
+                "template": "/function eventcore:trigger {args:{type:\"give\",data:{target:\"$(target)\",item:\"$(item)\",count:$(count),nbt:'$(nbt)'}}}"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "📊 Score (score_add)",
+      "action": {
+        "type": "minecraft:show_dialog",
+        "dialog": {
+          "type": "minecraft:multi_action",
+          "title": "📊 Score Ekle (score_add)",
+          "can_close_with_escape": true,
+          "pause": false,
+          "inputs": [
+            {
+              "type": "minecraft:text",
+              "key": "obj",
+              "label": "📛 Objective (örn: coins)",
+              "max_length": 64
+            },
+            {
+              "type": "minecraft:text",
+              "key": "amount",
+              "label": "🔢 Miktar",
+              "initial": "1",
+              "max_length": 16
+            },
+            {
+              "type": "minecraft:text",
+              "key": "player",
+              "label": "🎯 Oyuncu (örn: @p)",
+              "initial": "@p",
+              "max_length": 32
+            }
+          ],
+          "actions": [
+            {
+              "label": "➕ Ekle",
+              "action": {
+                "type": "minecraft:dynamic/run_command",
+                "template": "/function eventcore:trigger {args:{type:\"score_add\",data:{obj:\"$(obj)\",amount:$(amount),player:\"$(player)\"}}}"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "🩸 Bossbar Oluştur (bossbar_new)",
+      "action": {
+        "type": "minecraft:show_dialog",
+        "dialog": {
+          "type": "minecraft:multi_action",
+          "title": "🩸 Bossbar Oluştur",
+          "can_close_with_escape": true,
+          "pause": false,
+          "inputs": [
+            {
+              "type": "minecraft:text",
+              "key": "id",
+              "label": "ID (örn: event:timer)",
+              "max_length": 64
+            },
+            {
+              "type": "minecraft:text",
+              "key": "name",
+              "label": "Ad (örn: Etkinlik)",
+              "max_length": 64
+            },
+            {
+              "type": "minecraft:text",
+              "key": "val",
+              "label": "Değer",
+              "initial": "300",
+              "max_length": 16
+            },
+            {
+              "type": "minecraft:text",
+              "key": "color",
+              "label": "Renk (örn: red)",
+              "initial": "red",
+              "max_length": 16
+            },
+            {
+              "type": "minecraft:text",
+              "key": "max",
+              "label": "Maksimum",
+              "initial": "300",
+              "max_length": 16
+            },
+            {
+              "type": "minecraft:text",
+              "key": "user",
+              "label": "🎯 Hedef (örn: @s)",
+              "initial": "@s",
+              "max_length": 32
+            }
+          ],
+          "actions": [
+            {
+              "label": "✅ Oluştur",
+              "action": {
+                "type": "minecraft:dynamic/run_command",
+                "template": "/function eventcore:trigger {args:{type:\"bossbar_new\",data:{id:\"$(id)\",name:\"$(name)\",val:$(val),color:\"$(color)\",max:$(max),user:\"$(user)\"}}}"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "👹 Spawn Entity (entity → spawn)",
+      "action": {
+        "type": "minecraft:show_dialog",
+        "dialog": {
+          "type": "minecraft:multi_action",
+          "title": "👹 Varlık Oluştur (spawn)",
+          "can_close_with_escape": true,
+          "pause": false,
+          "inputs": [
+            {
+              "type": "minecraft:text",
+              "key": "entity",
+              "label": "Varlık ID (örn: minecraft:zombie)",
+              "max_length": 128
+            },
+            {
+              "type": "minecraft:text",
+              "key": "pos",
+              "label": "Konum (~ ~ ~ veya mutlak)",
+              "initial": "~ ~ ~",
+              "max_length": 64
+            },
+            {
+              "type": "minecraft:text",
+              "key": "count",
+              "label": "Adet",
+              "initial": "1",
+              "max_length": 6
+            },
+            {
+              "type": "minecraft:text",
+              "key": "nbt",
+              "label": "NBT (opsiyonel)",
+              "initial": "{}",
+              "max_length": 1000
+            }
+          ],
+          "actions": [
+            {
+              "label": "🧨 Oluştur",
+              "action": {
+                "type": "minecraft:dynamic/run_command",
+                "template": "/function eventcore:trigger {args:{type:\"summon\",data:{entity:\"$(entity)\",pos:\"$(pos)\",count:$(count),nbt:$(nbt)}}}"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "⌨️ CMD — Ham Komut (cmd)",
+      "action": {
+        "type": "minecraft:show_dialog",
+        "dialog": {
+          "type": "minecraft:multi_action",
+          "title": "⌨️ Ham Komut Çalıştır (cmd)",
+          "can_close_with_escape": true,
+          "pause": false,
+          "inputs": [
+            {
+              "type": "minecraft:text",
+              "key": "command",
+              "label": "Komut (ör: say Merhaba Dünya)",
+              "max_length": 200
+            },
+            {
+              "type": "minecraft:text",
+              "key": "player",
+              "label": "🎯 Hedef (opsiyonel, ör: @s)",
+              "initial": "@s",
+              "max_length": 32
+            }
+          ],
+          "actions": [
+            {
+              "label": "🚀 Çalıştır",
+              "action": {
+                "type": "minecraft:dynamic/run_command",
+                "template": "/function eventcore:trigger {args:{type:\"cmd\",data:{command:\"$(command)\",player:\"$(player)\"}}}"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "🔁 FUNC — Fonksiyon Çağır (func)",
+      "action": {
+        "type": "minecraft:show_dialog",
+        "dialog": {
+          "type": "minecraft:multi_action",
+          "title": "🔁 Fonksiyon Çağır (func)",
+          "can_close_with_escape": true,
+          "pause": false,
+          "inputs": [
+            {
+              "type": "minecraft:text",
+              "key": "ns",
+              "label": "Namespace (örn: eventcore)",
+              "initial": "eventcore",
+              "max_length": 64
+            },
+            {
+              "type": "minecraft:text",
+              "key": "path",
+              "label": "Fonksiyon yolu (örn: subfunctions/start_round)",
+              "max_length": 200
+            }
+          ],
+          "actions": [
+            {
+              "label": "▶️ Çağır",
+              "action": {
+                "type": "minecraft:dynamic/run_command",
+                "template": "/function eventcore:trigger {args:{type:\"func\",data:{ns:\"$(ns)\",path:\"$(path)\"}}}"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "⚡ Özel Eylem",
+      "action": {
+        "type": "minecraft:show_dialog",
+        "dialog": {
+          "type": "minecraft:multi_action",
+          "title": "Özel Eylem Yürütme",
+          "inputs": [
+            {
+              "type": "minecraft:text",
+              "key": "name",
+              "label": "Ad",
+              "initial": "@s",
+              "max_length": 500000,
+              "multiline": {}
+            },
+            {
+              "type": "minecraft:text",
+              "key": "data",
+              "label": "Veri",
+              "max_length": 1e+34
+            },
+            {
+              "type": "minecraft:text",
+              "key": "type",
+              "label": "Tip",
+              "max_length": 90000
+            }
+          ],
+          "can_close_with_escape": true,
+          "pause": false,
+          "columns": 1,
+          "actions": [
+            {
+              "label": "Çalıştır",
+              "action": {
+                "type": "minecraft:dynamic/run_command",
+                "template": "/execute as $(name) run function eventcore:trigger {args:{type:\"$(type)\",data:$(data)}}"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
