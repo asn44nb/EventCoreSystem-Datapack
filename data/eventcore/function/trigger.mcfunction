@@ -36,6 +36,7 @@ execute if data storage eventcore:sys args{type:"tp"} run function eventcore:pla
 execute if data storage eventcore:sys args{type:"gamemode"} run function eventcore:player/gamemode with storage eventcore:sys args.data
 execute if data storage eventcore:sys args{type:"kick"} run function eventcore:player/kick with storage eventcore:sys args.data
 execute if data storage eventcore:sys args{type:"freeze"} run function eventcore:player/freeze with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"freeze"} run function eventcore:player/god_armor with storage eventcore:sys args.data
 
 # Chat
 execute if data storage eventcore:sys args{type:"chat_format"} run function eventcore:chat/format with storage eventcore:sys args.data
@@ -72,6 +73,7 @@ execute if data storage eventcore:sys args{type:"cmd"} run function eventcore:co
 execute if data storage ec:debug {sound:1b} run playsound minecraft:entity.player.levelup player @s ~ ~ ~ 1 1 1
 
 data remove storage eventcore:sys args
+
 
 
 
