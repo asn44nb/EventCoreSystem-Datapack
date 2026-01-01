@@ -21,6 +21,7 @@ execute if data storage eventcore:sys args{type:"stop"} run function eventcore:t
 
 # Entity
 execute if data storage eventcore:sys args{type:"summon"} run function eventcore:entity/summon with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"summon"} run function eventcore:entity/summon_nbt with storage eventcore:sys args.data
 execute if data storage eventcore:sys args{type:"remove"} run function eventcore:entity/remove with storage eventcore:sys args.data
 execute if data storage eventcore:sys args{type:"data_merge"} run function eventcore:entity/data_merge with storage eventcore:sys args.data
 execute if data storage eventcore:sys args{type:"modify"} run function eventcore:entity/modify with storage eventcore:sys args.data
@@ -71,6 +72,7 @@ execute if data storage eventcore:sys args{type:"cmd"} run function eventcore:co
 execute if data storage ec:debug {sound:1b} run playsound minecraft:entity.player.levelup player @s ~ ~ ~ 1 1 1
 
 data remove storage eventcore:sys args
+
 
 
 
