@@ -36,6 +36,16 @@ execute if data storage eventcore:sys args{type:"gamemode"} run function eventco
 execute if data storage eventcore:sys args{type:"kick"} run function eventcore:player/kick with storage eventcore:sys args.data
 execute if data storage eventcore:sys args{type:"freeze"} run function eventcore:player/freeze with storage eventcore:sys args.data
 
+# Chat
+execute if data storage eventcore:sys args{type:"chat_format"} run function eventcore:chat/format with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"mute"} run function eventcore:chat/mute with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"unmute"} run function eventcore:chat/unmute with storage eventcore:sys args.data
+
+# Waypoint
+execute if data storage eventcore:sys args{type:"waypoint_create"} run function eventcore:waypoint/create with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"waypoint_tp"} run function eventcore:waypoint/teleport with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"waypoint_delete"} run function eventcore:waypoint/delete with storage eventcore:sys args.data
+
 # Efektler
 execute if data storage eventcore:sys args{type:"effect_add"} run function eventcore:effect/add with storage eventcore:sys args.data
 execute if data storage eventcore:sys args{type:"effect_clear"} run function eventcore:effect/clear with storage eventcore:sys args.data
@@ -61,6 +71,7 @@ execute if data storage eventcore:sys args{type:"cmd"} run function eventcore:co
 execute if data storage ec:debug {sound:1b} run playsound minecraft:entity.player.levelup player @s ~ ~ ~ 1 1 1
 
 data remove storage eventcore:sys args
+
 
 
 
