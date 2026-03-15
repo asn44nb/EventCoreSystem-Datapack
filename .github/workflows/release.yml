@@ -19,7 +19,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        run: |
+          git clone ${{ github.server_url }}/${{ github.repository }} .
+          git checkout ${{ github.sha }}
 
       - name: CRLF Kontrolü
         run: |
@@ -82,7 +84,9 @@ jobs:
       contents: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        run: |
+          git clone ${{ github.server_url }}/${{ github.repository }} .
+          git checkout ${{ github.sha }}
 
       - name: ZIP Oluştur
         run: |
