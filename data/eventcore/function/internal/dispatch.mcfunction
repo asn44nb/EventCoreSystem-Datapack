@@ -39,7 +39,6 @@ execute if data storage eventcore:sys args{type:"tp"} run function eventcore:pla
 execute if data storage eventcore:sys args{type:"gamemode"} run function eventcore:player/gamemode with storage eventcore:sys args.data
 execute if data storage eventcore:sys args{type:"kick"} run function eventcore:player/kick with storage eventcore:sys args.data
 execute if data storage eventcore:sys args{type:"freeze"} run function eventcore:player/freeze with storage eventcore:sys args.data
-execute if data storage eventcore:sys args{type:"freeze"} run function eventcore:player/god_armor with storage eventcore:sys args.data
 
 # Waypoint
 execute if data storage eventcore:sys args{type:"waypoint_create"} run function eventcore:waypoint/create with storage eventcore:sys args.data
