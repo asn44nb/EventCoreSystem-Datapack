@@ -2,7 +2,7 @@
   "replace": false,
   "values": [
     {
-      "id": "eventcore:main",
+      "id": "#eventcore:main",
       "required": false
     }
   ]
