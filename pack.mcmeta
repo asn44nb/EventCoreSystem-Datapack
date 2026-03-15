@@ -1,0 +1,14 @@
+{
+  "pack": {
+    "description": "§bEventCore §7v2.2.0 §8| §fOlay yönetim altyapısı",
+    "supported_formats": {
+      "min_inclusive": 80,
+      "max_inclusive": 101
+    },
+    "min_format": [
+      80,
+      1
+    ],
+    "max_format": 101
+  }
+}
