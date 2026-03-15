@@ -1,1 +1,0 @@
-$bossbar remove $(id)
