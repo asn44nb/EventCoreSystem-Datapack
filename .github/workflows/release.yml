@@ -15,6 +15,7 @@ name: Release
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
 
 jobs:
   validate:
@@ -52,7 +53,6 @@ jobs:
         run: |
           echo "=== Versiyon kontrolü ==="
           INPUT_VER="${{ github.event.inputs.version }}"
-
           MCMETA_VER=$(python3 -c "
           import json, sys
           d = json.load(open('pack.mcmeta'))
@@ -61,14 +61,11 @@ jobs:
           m = re.search(r'v(\d+\.\d+\.\d+)', desc)
           print(m.group(1) if m else '')
           ")
-
           CONFIG_VER=$(grep -oP 'set value "\K[0-9]+\.[0-9]+\.[0-9]+(?=")' \
             data/eventcore/function/config/load.mcfunction | head -1)
-
           echo "Girdi          : $INPUT_VER"
           echo "pack.mcmeta    : $MCMETA_VER"
           echo "config/load    : $CONFIG_VER"
-
           FAIL=0
           if [ "$MCMETA_VER" != "$INPUT_VER" ]; then
             echo "HATA: pack.mcmeta versiyonu ($MCMETA_VER) girdi ile eşleşmiyor ($INPUT_VER)"
