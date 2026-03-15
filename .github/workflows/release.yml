@@ -101,20 +101,20 @@ jobs:
           unzip -l "$ZIP_NAME" | tail -5
 
       - name: Release Oluştur
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: "v${{ github.event.inputs.version }}"
-          name: "EventCore v${{ github.event.inputs.version }}"
-          prerelease: ${{ github.event.inputs.prerelease }}
-          files: ${{ env.ZIP_NAME }}
-          body: |
-            ## EventCore v${{ github.event.inputs.version }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "v${{ github.event.inputs.version }}" \
+            "${{ env.ZIP_NAME }}" \
+            --title "EventCore v${{ github.event.inputs.version }}" \
+            --notes "## EventCore v${{ github.event.inputs.version }}
 
-            ### Kurulum
-            1. ZIP dosyasını `world/datapacks/` klasörüne çıkart
-            2. `/reload` komutunu çalıştır
-            3. Sohbette `[EventCore] v${{ github.event.inputs.version }} yüklendi.` mesajını gör
+          ### Kurulum
+          1. ZIP dosyasını \`world/datapacks/\` klasörüne çıkart
+          2. \`/reload\` komutunu çalıştır
+          3. Sohbette \`[EventCore] v${{ github.event.inputs.version }} yüklendi.\` mesajını gör
 
-            ### Gereksinimler
-            - Minecraft Java Edition 1.21.6+
-            - Pack Format 94
+          ### Gereksinimler
+          - Minecraft Java Edition 1.21.6+
+          - Pack Format 94" \
+            ${{ github.event.inputs.prerelease == 'true' && '--prerelease' || '' }}
