@@ -1,0 +1,10 @@
+{
+  "pack": {
+    "description": "§bEventCore §7v2.1.0 §8| §fOlay yönetim altyapısı",
+    "min_format": [
+      94,
+      1
+    ],
+    "max_format": 94
+  }
+}

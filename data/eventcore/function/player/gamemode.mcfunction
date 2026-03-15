@@ -1,0 +1,1 @@
+$gamemode $(mode) $(target)

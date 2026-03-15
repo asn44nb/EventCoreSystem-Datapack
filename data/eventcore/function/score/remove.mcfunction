@@ -1,0 +1,1 @@
+$scoreboard players remove $(target) $(obj) $(val)
