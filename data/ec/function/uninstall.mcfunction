@@ -1,5 +1,7 @@
 # EventCore Kaldırıcı
-# Kullanım: function eventcore:uninstall
+# Kullanım: function ec:uninstall
+data modify storage eventcore:config removed set value 1b
+
 data remove storage eventcore:config version
 data remove storage eventcore:config debug
 data remove storage eventcore:config errors
