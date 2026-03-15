@@ -1,1 +1,0 @@
-$particle $(type) $(x) $(y) $(z) $(dx) $(dy) $(dz) $(speed) $(count)
