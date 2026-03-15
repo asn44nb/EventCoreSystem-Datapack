@@ -13,16 +13,13 @@ name: Release
         default: false
         type: boolean
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 jobs:
   validate:
     name: Doğrulama
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v5
 
       - name: CRLF Kontrolü
         run: |
@@ -85,7 +82,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v5
 
       - name: ZIP Oluştur
         run: |
@@ -100,7 +97,7 @@ jobs:
           unzip -l "$ZIP_NAME" | tail -5
 
       - name: Release Oluştur
-        uses: softprops/action-gh-release@v2.3.2
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: "v${{ github.event.inputs.version }}"
           name: "EventCore v${{ github.event.inputs.version }}"
