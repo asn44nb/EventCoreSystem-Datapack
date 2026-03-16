@@ -34,7 +34,7 @@
             {
               "type": "minecraft:text",
               "key": "p",
-              "label": "🎯 Hedef (ör: @a / @p)",
+              "label": "🎯 Hedef (ör: @a / @s)",
               "initial": "@a",
               "max_length": 32
             }
@@ -100,8 +100,8 @@
             {
               "type": "minecraft:text",
               "key": "target",
-              "label": "🎯 Hedef Oyuncu (ör: @p)",
-              "initial": "@p",
+              "label": "🎯 Hedef Oyuncu (ör: @s)",
+              "initial": "@s",
               "max_length": 32
             },
             {
@@ -151,8 +151,8 @@
             {
               "type": "minecraft:text",
               "key": "target",
-              "label": "🎯 Hedef (ör: @p)",
-              "initial": "@p",
+              "label": "🎯 Hedef (ör: @s)",
+              "initial": "@s",
               "max_length": 32
             },
             {
@@ -214,8 +214,8 @@
             {
               "type": "minecraft:text",
               "key": "player",
-              "label": "🎯 Oyuncu (örn: @p)",
-              "initial": "@p",
+              "label": "🎯 Oyuncu (örn: @s)",
+              "initial": "@s",
               "max_length": 32
             }
           ],

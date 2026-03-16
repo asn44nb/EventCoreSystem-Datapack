@@ -229,7 +229,7 @@ function eventcore:trigger {args:{type:"broadcast",data:{msg:"Tüm oyuncular!"}}
 <h3>📊 Scoreboard</h3>
 <pre><code>
 function eventcore:trigger {args:{type:"score_obj_add",data:{obj:"coins",type:"dummy"}},events:[],config:{}}
-function eventcore:trigger {args:{type:"score_add",data:{target:"@p",obj:"coins",val:10}},events:[],config:{}}
+function eventcore:trigger {args:{type:"score_add",data:{target:"@s",obj:"coins",val:10}},events:[],config:{}}
 </code></pre>
 
 <h3>⌨️ Çoklu Komut</h3>
