@@ -1,6 +1,8 @@
 # Tüm config değerlerini listeler.
 tellraw @s [{"text":"======= EventCore Config =======","color":"aqua","bold":true}]
 tellraw @s [{"text":"  version                 ","color":"dark_aqua"},{"storage":"eventcore:config","nbt":"version","color":"green","bold":true}]
+tellraw @s [{"text":"  locale                  ","color":"gray"},{"storage":"eventcore:config","nbt":"locale","color":"yellow"}]
+tellraw @s [{"text":"  max_queue_size          ","color":"gray"},{"storage":"eventcore:config","nbt":"max_queue_size","color":"yellow"}]
 tellraw @s [{"text":"  debug.sound             ","color":"gray"},{"storage":"eventcore:config","nbt":"debug.sound","color":"yellow"}]
 tellraw @s [{"text":"  errors.show             ","color":"gray"},{"storage":"eventcore:config","nbt":"errors.show","color":"yellow"}]
 tellraw @s [{"text":"  cmd.security            ","color":"gray"},{"storage":"eventcore:config","nbt":"cmd.security","color":"yellow"}]
@@ -10,4 +12,5 @@ tellraw @s [{"text":"  broadcast.msg_color     ","color":"gray"},{"storage":"eve
 tellraw @s [{"text":"  on_load.enabled         ","color":"gray"},{"storage":"eventcore:config","nbt":"on_load.enabled","color":"yellow"}]
 tellraw @s [{"text":"  on_load.ns              ","color":"gray"},{"storage":"eventcore:config","nbt":"on_load.ns","color":"yellow"}]
 tellraw @s [{"text":"  on_load.path            ","color":"gray"},{"storage":"eventcore:config","nbt":"on_load.path","color":"yellow"}]
+tellraw @s [{"text":"  messages.err_prefix     ","color":"gray"},{"storage":"eventcore:config","nbt":"messages.err_prefix","color":"yellow"}]
 tellraw @s [{"text":"================================","color":"aqua","bold":true}]

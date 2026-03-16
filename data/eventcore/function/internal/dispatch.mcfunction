@@ -68,7 +68,9 @@ execute if data storage eventcore:sys args{type:"score_obj_add"} run function ev
 execute if data storage eventcore:sys args{type:"score_obj_remove"} run function eventcore:score/obj_remove with storage eventcore:sys args.data
 
 # Tekil Komut / Fonksiyon
-execute if data storage eventcore:sys args{type:"func"} run function eventcore:command/function with storage eventcore:sys args.data
+# Tekil Fonksiyon — args varsa macro argümanıyla, yoksa doğrudan çağır
+execute if data storage eventcore:sys args{type:"func"} if data storage eventcore:sys args.data.args run function eventcore:command/function_args with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"func"} unless data storage eventcore:sys args.data.args run function eventcore:command/function with storage eventcore:sys args.data
 execute if data storage eventcore:sys args{type:"cmd"} run function eventcore:command/run_secure
 
 # Çoklu Komut — data:{commands:["cmd1","cmd2",...]}
@@ -85,3 +87,40 @@ execute if data storage eventcore:sys args{type:"config_set_str"} run function e
 execute if data storage eventcore:sys args{type:"config_get"} run function eventcore:config/get with storage eventcore:sys args.data
 execute if data storage eventcore:sys args{type:"config_reset"} run function eventcore:config/reset
 execute if data storage eventcore:sys args{type:"config_list"} run function eventcore:config/list
+
+# Tag
+execute if data storage eventcore:sys args{type:"tag_add"} run function eventcore:entity/tag_add with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"tag_remove"} run function eventcore:entity/tag_remove with storage eventcore:sys args.data
+
+# Dünya
+execute if data storage eventcore:sys args{type:"fill"} run function eventcore:world/fill with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"fill"} run function eventcore:world/fill_replace with storage eventcore:sys args.data
+
+# Dialog
+execute if data storage eventcore:sys args{type:"dialog_show"} run function eventcore:dialog/show with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"dialog_clear"} run function eventcore:dialog/clear with storage eventcore:sys args.data
+
+# Cooldown
+execute if data storage eventcore:sys args{type:"cooldown_set"} run function eventcore:cooldown/set with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"cooldown_check"} run function eventcore:cooldown/check with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"cooldown_clear"} run function eventcore:cooldown/clear with storage eventcore:sys args.data
+
+# Flag
+execute if data storage eventcore:sys args{type:"flag_set"} run function eventcore:flag/set with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"flag_unset"} run function eventcore:flag/unset with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"flag_check"} run function eventcore:flag/check with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"flag_toggle"} run function eventcore:flag/toggle with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"flag_clear"} run function eventcore:flag/clear with storage eventcore:sys args.data
+
+# Queue
+execute if data storage eventcore:sys args{type:"queue_push"} run function eventcore:queue/push with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"queue_run"} run function eventcore:queue/run with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"queue_clear"} run function eventcore:queue/clear with storage eventcore:sys args.data
+
+# Locale
+execute if data storage eventcore:sys args{type:"locale_set"} run function eventcore:config/set_locale with storage eventcore:sys args.data
+
+# Label
+execute if data storage eventcore:sys args{type:"label_save"} run function eventcore:label/save with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"label_run"} run function eventcore:label/run with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"label_delete"} run function eventcore:label/delete with storage eventcore:sys args.data
