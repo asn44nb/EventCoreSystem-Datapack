@@ -1,2 +1,2 @@
-$kill @e[type=armor_stand,tag=waypoint_$(id)]
+$kill @e[type=minecraft:interaction,tag=waypoint_$(id)]
 $tellraw $(target) [{"text":"📍 Waypoint silindi!","color":"red"}]
