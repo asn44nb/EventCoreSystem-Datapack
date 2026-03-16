@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/versiyon-2.2.0-green" alt="versiyon">
+  <img src="https://img.shields.io/badge/versiyon-2.4.0-green" alt="versiyon">
   <img src="https://img.shields.io/badge/Minecraft-1.21.6%2B-blue" alt="minecraft">
   <img src="https://img.shields.io/badge/pack--format-94-orange" alt="pack format">
 </p>
