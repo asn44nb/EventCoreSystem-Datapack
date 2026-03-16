@@ -44,6 +44,7 @@ execute if data storage eventcore:sys args{type:"freeze"} run function eventcore
 execute if data storage eventcore:sys args{type:"waypoint_create"} run function eventcore:waypoint/create with storage eventcore:sys args.data
 execute if data storage eventcore:sys args{type:"waypoint_tp"} run function eventcore:waypoint/teleport with storage eventcore:sys args.data
 execute if data storage eventcore:sys args{type:"waypoint_delete"} run function eventcore:waypoint/delete with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"waypoint_get"} run function eventcore:waypoint/get with storage eventcore:sys args.data
 
 # Efekt
 execute if data storage eventcore:sys args{type:"effect_add"} run function eventcore:effect/add with storage eventcore:sys args.data
