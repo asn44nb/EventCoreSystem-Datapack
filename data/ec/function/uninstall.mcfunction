@@ -24,10 +24,10 @@ data remove storage eventcore:sys sort_normal
 data remove storage eventcore:sys sort_low
 data remove storage eventcore:sys sort_tmp
 # Kullanıcı verisi — namespace silinemez, içleri boşaltılır
-data modify storage eventcore:cooldown set value {}
-data modify storage eventcore:flags set value {}
-data modify storage eventcore:queues set value {}
-data modify storage eventcore:labels set value {}
+data merge storage eventcore:cooldown {}
+data merge storage eventcore:flags {}
+data merge storage eventcore:queues {}
+data merge storage eventcore:labels {}
 # Scoreboard temizliği
 scoreboard objectives remove ec.sys
 # Waypoint entity'leri temizle
