@@ -31,5 +31,5 @@ data merge storage eventcore:labels {}
 # Scoreboard temizliği
 scoreboard objectives remove ec.sys
 # Waypoint entity'leri temizle
-kill @e[type=minecraft:interaction,tag=waypoint]
+kill @e[type=minecraft:marker,tag=waypoint]
 tellraw @a [{"text":"[EventCore] ","color":"red","bold":true},{"text":"Kaldırıldı.","color":"white"}]
