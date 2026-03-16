@@ -70,7 +70,7 @@
   <li>score (score_set, score_add, score_remove, score_reset, score_obj_add, score_obj_remove)</li>
   <li>bossbar (bossbar_new, bossbar_set, bossbar_del)</li>
   <li>entity (summon, remove, data_merge, modify)</li>
-  <li>waypoint (waypoint_create, waypoint_tp, waypoint_delete)</li>
+  <li>waypoint (waypoint_create, waypoint_tp, waypoint_delete,waypoint_get)</li>
   <li>timer (delay, repeat, stop)</li>
   <li>cmd / cmds (ham komut çalıştırma)</li>
   <li>func / funcs (fonksiyon çağırma)</li>

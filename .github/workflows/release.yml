@@ -4,7 +4,7 @@ name: Release
   workflow_dispatch:
     inputs:
       version:
-        description: "Versiyon (örn: 2.2.0)"
+        description: "Versiyon (örn: 2.4.3)"
         required: true
         type: string
       prerelease:
