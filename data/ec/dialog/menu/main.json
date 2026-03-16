@@ -44,7 +44,7 @@
               "label": "📨 Gönder",
               "action": {
                 "type": "minecraft:dynamic/run_command",
-                "template": "/function eventcore:trigger {args:{type:\"broadcast\",data:{msg:\"$(msg)\",target:\"$(p)\"}}}"
+                "template": "/function eventcore:trigger {args:{type:\"broadcast\",data:{msg:\"$(msg)\",target:\"$(p)\"}},events:[],config:{}}"
               }
             }
           ]
@@ -80,7 +80,7 @@
               "label": "▶️ Çal",
               "action": {
                 "type": "minecraft:dynamic/run_command",
-                "template": "/function eventcore:trigger {args:{type:\"playsound\",data:{sound:\"$(sound)\",target:\"$(p)\",source:\"master\"}}}"
+                "template": "/function eventcore:trigger {args:{type:\"playsound\",data:{sound:\"$(sound)\",target:\"$(p)\",source:\"master\"}},events:[],config:{}}"
               }
             }
           ]
@@ -131,7 +131,7 @@
               "label": "🚀 Işınla",
               "action": {
                 "type": "minecraft:dynamic/run_command",
-                "template": "/function eventcore:trigger {args:{type:\"tp\",data:{target:\"$(target)\",x:$(x),y:$(y),z:$(z)}}}"
+                "template": "/function eventcore:trigger {args:{type:\"tp\",data:{target:\"$(target)\",x:$(x),y:$(y),z:$(z)}},events:[],config:{}}"
               }
             }
           ]
@@ -181,7 +181,7 @@
               "label": "🎁 Ver",
               "action": {
                 "type": "minecraft:dynamic/run_command",
-                "template": "/function eventcore:trigger {args:{type:\"give\",data:{target:\"$(target)\",item:\"$(item)\",count:$(count),nbt:'$(nbt)'}}}"
+                "template": "/function eventcore:trigger {args:{type:\"give\",data:{target:\"$(target)\",item:\"$(item)\",count:$(count),nbt:'$(nbt)'}},events:[],config:{}}"
               }
             }
           ]
@@ -224,7 +224,7 @@
               "label": "➕ Ekle",
               "action": {
                 "type": "minecraft:dynamic/run_command",
-                "template": "/function eventcore:trigger {args:{type:\"score_add\",data:{obj:\"$(obj)\",amount:$(amount),player:\"$(player)\"}}}"
+                "template": "/function eventcore:trigger {args:{type:\"score_add\",data:{obj:\"$(obj)\",amount:$(amount),player:\"$(player)\"}},events:[],config:{}}"
               }
             }
           ]
@@ -287,7 +287,7 @@
               "label": "✅ Oluştur",
               "action": {
                 "type": "minecraft:dynamic/run_command",
-                "template": "/function eventcore:trigger {args:{type:\"bossbar_new\",data:{id:\"$(id)\",name:\"$(name)\",val:$(val),color:\"$(color)\",max:$(max),user:\"$(user)\"}}}"
+                "template": "/function eventcore:trigger {args:{type:\"bossbar_new\",data:{id:\"$(id)\",name:\"$(name)\",val:$(val),color:\"$(color)\",max:$(max),user:\"$(user)\"}},events:[],config:{}}"
               }
             }
           ]
@@ -337,7 +337,7 @@
               "label": "🧨 Oluştur",
               "action": {
                 "type": "minecraft:dynamic/run_command",
-                "template": "/function eventcore:trigger {args:{type:\"summon\",data:{entity:\"$(entity)\",pos:\"$(pos)\",count:$(count),nbt:$(nbt)}}}"
+                "template": "/function eventcore:trigger {args:{type:\"summon\",data:{entity:\"$(entity)\",pos:\"$(pos)\",count:$(count),nbt:$(nbt)}},events:[],config:{}}"
               }
             }
           ]
@@ -373,7 +373,7 @@
               "label": "🚀 Çalıştır",
               "action": {
                 "type": "minecraft:dynamic/run_command",
-                "template": "/function eventcore:trigger {args:{type:\"cmd\",data:{command:\"$(command)\",player:\"$(player)\"}}}"
+                "template": "/function eventcore:trigger {args:{type:\"cmd\",data:{command:\"$(command)\",player:\"$(player)\"}},events:[],config:{}}"
               }
             }
           ]
@@ -409,7 +409,7 @@
               "label": "▶️ Çağır",
               "action": {
                 "type": "minecraft:dynamic/run_command",
-                "template": "/function eventcore:trigger {args:{type:\"func\",data:{ns:\"$(ns)\",path:\"$(path)\"}}}"
+                "template": "/function eventcore:trigger {args:{type:\"func\",data:{ns:\"$(ns)\",path:\"$(path)\"}},events:[],config:{}}"
               }
             }
           ]
@@ -423,6 +423,9 @@
         "dialog": {
           "type": "minecraft:multi_action",
           "title": "Özel Eylem Yürütme",
+          "can_close_with_escape": true,
+          "pause": false,
+          "columns": 1,
           "inputs": [
             {
               "type": "minecraft:text",
@@ -446,9 +449,6 @@
               "max_length": 2000000000
             }
           ],
-          "can_close_with_escape": true,
-          "pause": false,
-          "columns": 1,
           "actions": [
             {
               "label": "Çalıştır",
