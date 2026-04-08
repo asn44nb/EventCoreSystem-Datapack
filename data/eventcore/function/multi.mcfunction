@@ -3,8 +3,8 @@
 $data modify storage eventcore:sys event_queue set value $(events)
 
 # Versiyon güvenlik kontrolü
-execute unless data storage eventcore:config {version:"2.4.2"} run tellraw @a [{"storage":"eventcore:config","nbt":"messages.err_prefix","color":"red","bold":true},{"text":" ","color":"white"},{"storage":"eventcore:config","nbt":"messages.err_version","color":"white"}]
-execute unless data storage eventcore:config {version:"2.4.2"} run return fail
+execute unless data storage eventcore:config {version:"2.5.0"} run tellraw @a [{"storage":"eventcore:config","nbt":"messages.err_prefix","color":"red","bold":true},{"text":" ","color":"white"},{"storage":"eventcore:config","nbt":"messages.err_version","color":"white"}]
+execute unless data storage eventcore:config {version:"2.5.0"} run return fail
 
 # Max queue size ve priority sıralama
 execute if data storage eventcore:sys event_queue[0] run function eventcore:events/check_size with storage eventcore:config

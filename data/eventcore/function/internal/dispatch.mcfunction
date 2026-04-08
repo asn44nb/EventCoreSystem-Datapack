@@ -125,3 +125,27 @@ execute if data storage eventcore:sys args{type:"locale_set"} run function event
 execute if data storage eventcore:sys args{type:"label_save"} run function eventcore:label/save with storage eventcore:sys args.data
 execute if data storage eventcore:sys args{type:"label_run"} run function eventcore:label/run with storage eventcore:sys args.data
 execute if data storage eventcore:sys args{type:"label_delete"} run function eventcore:label/delete with storage eventcore:sys args.data
+
+# Math
+execute if data storage eventcore:sys args{type:"math_op"} run function eventcore:math/op with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"math_set"} run function eventcore:math/set with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"math_get"} run function eventcore:math/get with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"math_copy"} run function eventcore:math/copy with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"math_compare"} run function eventcore:math/compare with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"math_add_const"} run function eventcore:math/add_const with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"math_sub_const"} run function eventcore:math/sub_const with storage eventcore:sys args.data
+
+# Data Store
+execute if data storage eventcore:sys args{type:"data_set"} run function eventcore:data/set with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"data_get"} run function eventcore:data/get with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"data_del"} run function eventcore:data/del with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"data_copy"} run function eventcore:data/copy with storage eventcore:sys args.data
+
+# Region
+execute if data storage eventcore:sys args{type:"region_check"} run function eventcore:region/check with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"region_count"} run function eventcore:region/count with storage eventcore:sys args.data
+
+# Genişletilmiş Oyuncu & Ses
+execute if data storage eventcore:sys args{type:"title_full"} run function eventcore:player/title_full with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"inv_clear"} run function eventcore:player/inv_clear with storage eventcore:sys args.data
+execute if data storage eventcore:sys args{type:"sound_stop"} run function eventcore:sound/stop with storage eventcore:sys args.data

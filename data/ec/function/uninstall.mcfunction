@@ -23,11 +23,15 @@ data remove storage eventcore:sys sort_high
 data remove storage eventcore:sys sort_normal
 data remove storage eventcore:sys sort_low
 data remove storage eventcore:sys sort_tmp
+data remove storage eventcore:sys math_result
+data remove storage eventcore:sys data_result
+data remove storage eventcore:sys region_count
 # Kullanıcı verisi — namespace silinemez, içleri boşaltılır
 data merge storage eventcore:cooldown {}
 data merge storage eventcore:flags {}
 data merge storage eventcore:queues {}
 data merge storage eventcore:labels {}
+data merge storage eventcore:data {}
 # Scoreboard temizliği
 scoreboard objectives remove ec.sys
 # Waypoint entity'leri temizle

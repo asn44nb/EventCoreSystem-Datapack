@@ -1,15 +1,18 @@
 {
   "pack": {
     "pack_format": 80,
-    "description": "§bEventCore §7v2.4.3 §8| §fOlay yönetim altyapısı",
+    "description": "§bEventCore §7v2.5.0 §8| §fOlay yönetim altyapısı",
     "supported_formats": {
       "min_inclusive": 80,
-      "max_inclusive": 101
+      "max_inclusive": 999
     },
     "min_format": [
       80,
       1
     ],
-    "max_format": 101
+    "max_format": [
+      1,
+      99
+    ]
   }
 }
