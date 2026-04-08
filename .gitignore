@@ -46,9 +46,6 @@ server.jar
 server.jar_old
 server.jar.bak
 .minecraft/versions/
-spyglass.json
-spyglass.json.bak
-spyglass.json.old
 downloads/
 backup/
 backups/
@@ -116,3 +113,8 @@ test.tar.gz
 *.xlsx
 *.ppt
 *.pptx
+
+# DHP
+#spyglass.json
+#spyglass.json.bak
+#spyglass.json.old
