@@ -115,6 +115,6 @@ test.tar.gz
 *.pptx
 
 # DHP
-#spyglass.json
-#spyglass.json.bak
-#spyglass.json.old
+spyglass.json
+spyglass.json.bak
+spyglass.json.old
