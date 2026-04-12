@@ -1,4 +1,4 @@
-<h1 align="center">🎮 EventCore Sistemi</h1>
+markdown<h1 align="center">🎮 EventCore Sistemi</h1>
 
 <p align="center">
   <b>Gelişmiş • Modüler • Vanilla Dostu</b><br>
@@ -13,179 +13,177 @@
 
 <p align="center">
   <a href="https://github.com/asn44nb/EventCoreSystem-Datapack/">
-    🔗 GitHub Repository
+    🔗 GitHub Deposu
   </a>
 </p>
 
-<hr>
+---
 
-<h2>📌 Genel Bakış</h2>
+> [!CAUTION]
+> **Bu depo kalıcı olarak arşivlenmiştir.**
+> Projenin geliştirilmesi durdurulmuştur. Gelecekte herhangi bir sürüm,
+> güncelleme veya devam projesi planlanmamaktadır. Depo yalnızca referans
+> amaçlı olduğu gibi korunmaktadır. Yeni sorunlar, pull request'ler veya
+> katkılar incelenmeyecek ya da kabul edilmeyecektir.
+>
+> **12 Nisan 2026 tarihinde kalıcı olarak arşivlendi.**
 
-<p>
-  <b>EventCore</b>, Minecraft 1.21.6+ için tasarlanmış, tek bir merkezden çalışan
-  <b>event tetikleme altyapısıdır</b>.<br>
-  Tüm işlemler <code>eventcore:trigger</code> fonksiyonu üzerinden yönlendirilir.
-</p>
+---
 
-<ul>
-  <li>✔ Vanilla uyumlu</li>
-  <li>✔ Modüler yapı</li>
-  <li>✔ Genişletilebilir mimari</li>
-  <li>✔ Okunabilir sözdizimi</li>
-  <li>✔ Tek çağrıda çoklu eylem desteği (<code>events:[]</code>)</li>
-  <li>✔ Gecikmeli yürütme (<code>config:{delay:N}</code>)</li>
-  <li>✔ Ayarlanabilir config sistemi</li>
-</ul>
+## 📌 Genel Bakış
 
-<hr>
+**EventCore**, Minecraft 1.21.6+ için tasarlanmış, tek bir merkezden çalışan **event tetikleme altyapısıdır**.
+Tüm işlemler `eventcore:trigger` fonksiyonu üzerinden yönlendirilir.
 
-<h2>📋 İçindekiler</h2>
+- ✔ Vanilla uyumlu
+- ✔ Modüler yapı
+- ✔ Genişletilebilir mimari
+- ✔ Okunabilir sözdizimi
+- ✔ Tek çağrıda çoklu eylem desteği (`events:[]`)
+- ✔ Gecikmeli yürütme (`config:{delay:N}`)
+- ✔ Ayarlanabilir config sistemi
 
-<table>
-  <tr><td>📖 <a href="#hakkında">Hakkında</a></td></tr>
-  <tr><td>✨ <a href="#özellikler">Özellikler</a></td></tr>
-  <tr><td>⚙️ <a href="#kurulum">Kurulum</a></td></tr>
-  <tr><td>🚀 <a href="#hızlı-başlangıç">Hızlı Başlangıç</a></td></tr>
-  <tr><td>🧠 <a href="#trigger-sözdizimi">Trigger Sözdizimi</a></td></tr>
-  <tr><td>⚙️ <a href="#config-sistemi">Config Sistemi</a></td></tr>
-  <tr><td>🧪 <a href="#örnekler">Örnekler</a></td></tr>
-  <tr><td>📂 <a href="#proje-yapısı">Proje Yapısı</a></td></tr>
-  <tr><td>🤝 <a href="#katkıda-bulunma">Katkıda Bulunma</a></td></tr>
-  <tr><td>📜 <a href="#lisans">Lisans</a></td></tr>
-</table>
+---
 
-<hr>
+## 📋 İçindekiler
 
-<h2 id="hakkında">Hakkında</h2>
+- [Hakkında](#hakkında)
+- [Özellikler](#özellikler)
+- [Kurulum](#kurulum)
+- [Hızlı Başlangıç](#hızlı-başlangıç)
+- [Trigger Sözdizimi](#trigger-sözdizimi)
+- [Config Sistemi](#config-sistemi)
+- [Örnekler](#örnekler)
+- [Proje Yapısı](#proje-yapısı)
+- [Katkıda Bulunma](#katkıda-bulunma)
+- [Lisans](#lisans)
 
-<p><b>EventCore</b>, aşağıdaki sistemleri kapsayan birleşik bir event çekirdeğidir:</p>
+---
 
-<ul>
-  <li>message (broadcast, whisper, msg, title, subtitle, actionbar, title_times, title_clear, title_reset)</li>
-  <li>sound (playsound, particle)</li>
-  <li>player (tp, gamemode, kick, freeze, attribute)</li>
-  <li>effect (effect_add, effect_clear, heal)</li>
-  <li>item (give, give_raw, clear, enchant)</li>
-  <li>xp</li>
-  <li>score (score_set, score_add, score_remove, score_reset, score_obj_add, score_obj_remove)</li>
-  <li>bossbar (bossbar_new, bossbar_set, bossbar_del)</li>
-  <li>entity (summon, remove, data_merge, modify)</li>
-  <li>waypoint (waypoint_create, waypoint_tp, waypoint_delete,waypoint_get)</li>
-  <li>timer (delay, repeat, stop)</li>
-  <li>cmd / cmds (ham komut çalıştırma)</li>
-  <li>func / funcs (fonksiyon çağırma)</li>
-  <li>config (config_set, config_set_str, config_get, config_reset, config_list)</li>
-</ul>
+## Hakkında
 
-<hr>
+**EventCore**, aşağıdaki sistemleri kapsayan birleşik bir event çekirdeğidir:
 
-<h2 id="özellikler">Özellikler</h2>
+- `message` — broadcast, whisper, msg, title, subtitle, actionbar, title_times, title_clear, title_reset
+- `sound` — playsound, particle
+- `player` — tp, gamemode, kick, freeze, attribute
+- `effect` — effect_add, effect_clear, heal
+- `item` — give, give_raw, clear, enchant
+- `xp`
+- `score` — score_set, score_add, score_remove, score_reset, score_obj_add, score_obj_remove
+- `bossbar` — bossbar_new, bossbar_set, bossbar_del
+- `entity` — summon, remove, data_merge, modify
+- `waypoint` — waypoint_create, waypoint_tp, waypoint_delete, waypoint_get
+- `timer` — delay, repeat, stop
+- `cmd` / `cmds` — ham komut çalıştırma
+- `func` / `funcs` — fonksiyon çağırma
+- `config` — config_set, config_set_str, config_get, config_reset, config_list
 
-<table>
-  <tr><th>Sistem</th><th>Açıklama</th></tr>
-  <tr><td>📢 Message</td><td>Broadcast, whisper, msg, title, subtitle, actionbar ve title kontrolleri</td></tr>
-  <tr><td>🔊 Sound</td><td>Playsound ve partikül desteği</td></tr>
-  <tr><td>👤 Player</td><td>Teleport, gamemode, kick, dondurma, attribute</td></tr>
-  <tr><td>✨ Effect</td><td>Efekt ekleme, temizleme ve anlık iyileştirme</td></tr>
-  <tr><td>🎒 Items</td><td>Give / clear / enchant — 1.21+ bileşen sistemi desteği</td></tr>
-  <tr><td>✨ XP</td><td>XP puan ve seviye yönetimi</td></tr>
-  <tr><td>📊 Score</td><td>Scoreboard oyuncu ve objective yönetimi</td></tr>
-  <tr><td>🩸 Bossbar</td><td>Oluşturma / güncelleme / kaldırma</td></tr>
-  <tr><td>👹 Entity</td><td>Spawn / kill / data merge / modify</td></tr>
-  <tr><td>📍 Waypoint</td><td>Waypoint oluşturma, ışınlanma, silme</td></tr>
-  <tr><td>⏱ Timer</td><td>Gecikmeli, tekrarlayan ve durdurulabilir zamanlayıcılar</td></tr>
-  <tr><td>⌨️ Cmd / Cmds</td><td>Tekil veya çoklu ham komut çalıştırma (güvenlik filtreli)</td></tr>
-  <tr><td>🔁 Func / Funcs</td><td>Tekil veya çoklu fonksiyon çağırma</td></tr>
-  <tr><td>⚙️ Config</td><td>Ayarlanabilir sistem değişkenleri, yeniden yükleme sonrası kalıcı</td></tr>
-</table>
+---
 
-<hr>
+## Özellikler
 
-<h2 id="kurulum">Kurulum</h2>
+| Sistem | Açıklama |
+|--------|----------|
+| 📢 Message | Broadcast, whisper, msg, title, subtitle, actionbar ve title kontrolleri |
+| 🔊 Sound | Playsound ve partikül desteği |
+| 👤 Player | Teleport, gamemode, kick, dondurma, attribute |
+| ✨ Effect | Efekt ekleme, temizleme ve anlık iyileştirme |
+| 🎒 Items | Give / clear / enchant — 1.21+ bileşen sistemi desteği |
+| ✨ XP | XP puan ve seviye yönetimi |
+| 📊 Score | Scoreboard oyuncu ve objective yönetimi |
+| 🩸 Bossbar | Oluşturma / güncelleme / kaldırma |
+| 👹 Entity | Spawn / kill / data merge / modify |
+| 📍 Waypoint | Waypoint oluşturma, ışınlanma, silme |
+| ⏱ Timer | Gecikmeli, tekrarlayan ve durdurulabilir zamanlayıcılar |
+| ⌨️ Cmd / Cmds | Tekil veya çoklu ham komut çalıştırma (güvenlik filtreli) |
+| 🔁 Func / Funcs | Tekil veya çoklu fonksiyon çağırma |
+| ⚙️ Config | Ayarlanabilir sistem değişkenleri, yeniden yükleme sonrası kalıcı |
+
+---
+
+## Kurulum
 
 <details>
-  <summary><b>📦 Gereksinimler</b></summary>
-  <ul>
-    <li>Minecraft Java Edition 1.21.6+</li>
-    <li>Pack Format 94</li>
-  </ul>
+<summary><b>📦 Gereksinimler</b></summary>
+
+- Minecraft Java Edition 1.21.6+
+- Pack Format 94
+
 </details>
 
 <details>
-  <summary><b>🛠 Kurulum Adımları</b></summary>
-  <ol>
-    <li>ZIP dosyasını <code>world/datapacks/</code> klasörüne çıkart</li>
-    <li><code>/reload</code> komutunu çalıştır</li>
-    <li>Yükleme onayı için sohbette <code>[EventCore] v2.2.0 yüklendi.</code> mesajını gör</li>
-  </ol>
+<summary><b>🛠 Kurulum Adımları</b></summary>
+
+1. ZIP dosyasını `world/datapacks/` klasörüne çıkart
+2. `/reload` komutunu çalıştır
+3. Yükleme onayı için sohbette `[EventCore] v2.2.0 yüklendi.` mesajını gör
+
 </details>
 
-<hr>
+---
 
-<h2 id="hızlı-başlangıç">🚀 Hızlı Başlangıç</h2>
+## Hızlı Başlangıç
 
-<pre><code>
+```mcfunction
 function eventcore:trigger {args:{type:"broadcast",data:{msg:"EventCore aktif!"}},events:[],config:{}}
-</code></pre>
+```
 
-<hr>
+---
 
-<h2 id="trigger-sözdizimi">🧠 Trigger Sözdizimi</h2>
+## Trigger Sözdizimi
 
-<p>
-  <code>eventcore:trigger</code> üç macro parametresi alır.
-  Üçü de her zaman belirtilmelidir — boş geçilebilir ama atlanamaz.
-</p>
+`eventcore:trigger` üç macro parametresi alır.
+Üçü de her zaman belirtilmelidir — boş geçilebilir ama atlanamaz.
 
-<pre><code>
+```mcfunction
 function eventcore:trigger {
   args:{type:"...",data:{...}},
   events:[{type:"...",data:{...}}, ...],
   config:{...}
 }
-</code></pre>
+```
 
-<h3>args:{}</h3>
-<p>Tekil bir eylem çalıştırır. Boş bırakılabilir: <code>args:{}</code></p>
+### args:{}
 
-<h3>events:[]</h3>
-<p>Birden fazla eylemi sırayla çalıştırır. Boş bırakılabilir: <code>events:[]</code></p>
+Tekil bir eylem çalıştırır. Boş bırakılabilir: `args:{}`
 
-<h3>config:{}</h3>
-<table>
-  <tr><th>Alan</th><th>Tür</th><th>Açıklama</th></tr>
-  <tr><td><code>delay:N</code></td><td>int</td><td>N tick sonra çalıştır</td></tr>
-  <tr><td><code>version_check:0b</code></td><td>bool</td><td>Sürüm kontrolünü devre dışı bırak (varsayılan: 1b)</td></tr>
-  <tr><td><code>as:"@a"</code></td><td>string</td><td>execute as bağlamı</td></tr>
-  <tr><td><code>at:"@s"</code></td><td>string</td><td>execute at bağlamı</td></tr>
-  <tr><td><code>silent:1b</code></td><td>bool</td><td>Hata mesajlarını bastır</td></tr>
-</table>
+### events:[]
 
-<hr>
+Birden fazla eylemi sırayla çalıştırır. Boş bırakılabilir: `events:[]`
 
-<h2 id="config-sistemi">⚙️ Config Sistemi</h2>
+### config:{}
 
-<p>
-  Config değerleri <code>eventcore:config</code> storage'ında tutulur.
-  <code>/reload</code> sonrası otomatik yüklenir — mevcut değerlerin üstüne yazılmaz.
-</p>
+| Alan | Tür | Açıklama |
+|------|-----|----------|
+| `delay:N` | int | N tick sonra çalıştır |
+| `version_check:0b` | bool | Sürüm kontrolünü devre dışı bırak (varsayılan: 1b) |
+| `as:"@a"` | string | execute as bağlamı |
+| `at:"@s"` | string | execute at bağlamı |
+| `silent:1b` | bool | Hata mesajlarını bastır |
 
-<table>
-  <tr><th>Anahtar</th><th>Varsayılan</th><th>Açıklama</th></tr>
-  <tr><td><code>debug.sound</code></td><td><code>1b</code></td><td>Trigger sonrası level-up sesi</td></tr>
-  <tr><td><code>errors.show</code></td><td><code>1b</code></td><td>Hata mesajlarını göster</td></tr>
-  <tr><td><code>cmd.security</code></td><td><code>1b</code></td><td>OP/ban/kick komut filtresi</td></tr>
-  <tr><td><code>broadcast.prefix</code></td><td><code>"[DUYURU]"</code></td><td>Broadcast ön eki</td></tr>
-  <tr><td><code>broadcast.prefix_color</code></td><td><code>"gold"</code></td><td>Ön ek rengi</td></tr>
-  <tr><td><code>broadcast.msg_color</code></td><td><code>"yellow"</code></td><td>Mesaj rengi</td></tr>
-  <tr><td><code>on_load.enabled</code></td><td><code>0b</code></td><td>Yükleme sonrası fonksiyon çalıştır</td></tr>
-  <tr><td><code>on_load.ns</code></td><td><code>"eventcore"</code></td><td>Yükleme fonksiyonu namespace'i</td></tr>
-  <tr><td><code>on_load.path</code></td><td><code>"version/announce"</code></td><td>Yükleme fonksiyonu yolu</td></tr>
-</table>
+---
 
-<h3>Config Kullanımı</h3>
+## Config Sistemi
 
-<pre><code>
+Config değerleri `eventcore:config` storage'ında tutulur.
+`/reload` sonrası otomatik yüklenir — mevcut değerlerin üstüne yazılmaz.
+
+| Anahtar | Varsayılan | Açıklama |
+|---------|-----------|----------|
+| `debug.sound` | `1b` | Trigger sonrası level-up sesi |
+| `errors.show` | `1b` | Hata mesajlarını göster |
+| `cmd.security` | `1b` | OP/ban/kick komut filtresi |
+| `broadcast.prefix` | `"[DUYURU]"` | Broadcast ön eki |
+| `broadcast.prefix_color` | `"gold"` | Ön ek rengi |
+| `broadcast.msg_color` | `"yellow"` | Mesaj rengi |
+| `on_load.enabled` | `0b` | Yükleme sonrası fonksiyon çalıştır |
+| `on_load.ns` | `"eventcore"` | Yükleme fonksiyonu namespace'i |
+| `on_load.path` | `"version/announce"` | Yükleme fonksiyonu yolu |
+
+### Config Kullanımı
+
+```mcfunction
 # Tüm değerleri listele
 function eventcore:trigger {args:{type:"config_list"},events:[],config:{}}
 
@@ -200,126 +198,122 @@ function eventcore:trigger {args:{type:"config_set_str",data:{key:"broadcast.pre
 
 # Varsayılanlara sıfırla
 function eventcore:trigger {args:{type:"config_reset"},events:[],config:{}}
-</code></pre>
+```
 
-<hr>
+---
 
-<h2 id="örnekler">🧪 Örnekler</h2>
+## Örnekler
 
-<h3>📢 Tekil Eylem — Broadcast</h3>
-<pre><code>
+### 📢 Tekil Eylem — Broadcast
+
+```mcfunction
 function eventcore:trigger {args:{type:"broadcast",data:{msg:"Sunucu başlıyor!"}},events:[],config:{}}
-</code></pre>
+```
 
-<h3>📋 Çoklu Eylem — events:[]</h3>
-<pre><code>
+### 📋 Çoklu Eylem — events:[]
+
+```mcfunction
 function eventcore:trigger {args:{},events:[{type:"broadcast",data:{msg:"Etkinlik başladı!"}},{type:"title",data:{target:"@a",text:"BAŞLADI",color:"gold"}},{type:"playsound",data:{sound:"minecraft:entity.player.levelup",source:"master",target:"@a"}}],config:{}}
-</code></pre>
+```
 
-<h3>⏱ Gecikmeli Yürütme</h3>
-<pre><code>
+### ⏱ Gecikmeli Yürütme
+
+```mcfunction
 function eventcore:trigger {args:{type:"broadcast",data:{msg:"5 saniye sonra!"}},events:[],config:{delay:100}}
-</code></pre>
+```
 
-<h3>👤 Bağlamlı Yürütme — as + at</h3>
-<pre><code>
+### 👤 Bağlamlı Yürütme — as + at
+
+```mcfunction
 function eventcore:trigger {args:{type:"broadcast",data:{msg:"Tüm oyuncular!"}},events:[],config:{as:"@a",at:"@s"}}
-</code></pre>
+```
 
-<h3>📊 Scoreboard</h3>
-<pre><code>
+### 📊 Scoreboard
+
+```mcfunction
 function eventcore:trigger {args:{type:"score_obj_add",data:{obj:"coins",type:"dummy"}},events:[],config:{}}
 function eventcore:trigger {args:{type:"score_add",data:{target:"@s",obj:"coins",val:10}},events:[],config:{}}
-</code></pre>
+```
 
-<h3>⌨️ Çoklu Komut</h3>
-<pre><code>
+### ⌨️ Çoklu Komut
+
+```mcfunction
 function eventcore:trigger {args:{type:"cmds",data:{commands:["title @s title {\"text\":\"A\"}","title @s subtitle {\"text\":\"B\"}"]}},events:[],config:{}}
-</code></pre>
+```
 
-<h3>🔕 Sürüm Kontrolü Devre Dışı</h3>
-<pre><code>
+### 🔕 Sürüm Kontrolü Devre Dışı
+
+```mcfunction
 function eventcore:trigger {args:{type:"broadcast",data:{msg:"test"}},events:[],config:{version_check:0b}}
-</code></pre>
+```
 
-<hr>
+---
 
-<h2 id="proje-yapısı">📂 Proje Yapısı</h2>
-
-<pre><code>
+## Proje Yapısı
 eventcore/
 ├── pack.mcmeta
 └── data/eventcore/function/
-    ├── trigger.mcfunction          ← Ana giriş noktası
-    ├── multi.mcfunction            ← Sadece events:[] girişi
-    ├── trigger/
-    │   ├── run_core.mcfunction
-    │   ├── run_as.mcfunction
-    │   ├── run_at.mcfunction
-    │   ├── run_as_at.mcfunction
-    │   ├── defer.mcfunction
-    │   ├── schedule_delay.mcfunction
-    │   └── run_pending.mcfunction
-    ├── internal/
-    │   └── dispatch.mcfunction     ← Ortak eylem yönlendirici
-    ├── events/
-    │   ├── process.mcfunction
-    │   └── exec.mcfunction
-    ├── config/
-    │   ├── load.mcfunction
-    │   ├── list.mcfunction
-    │   ├── get.mcfunction
-    │   ├── set.mcfunction
-    │   ├── set_str.mcfunction
-    │   ├── reset.mcfunction
-    │   └── run_on_load.mcfunction
-    ├── version/
-    │   └── announce.mcfunction
-    ├── messages/
-    ├── sound/
-    ├── player/
-    ├── effect/
-    ├── item/
-    ├── xp/
-    ├── score/
-    ├── bossbar/
-    ├── entity/
-    ├── waypoint/
-    ├── timer/
-    └── command/
-</code></pre>
+├── trigger.mcfunction          ← Ana giriş noktası
+├── multi.mcfunction            ← Sadece events:[] girişi
+├── trigger/
+│   ├── run_core.mcfunction
+│   ├── run_as.mcfunction
+│   ├── run_at.mcfunction
+│   ├── run_as_at.mcfunction
+│   ├── defer.mcfunction
+│   ├── schedule_delay.mcfunction
+│   └── run_pending.mcfunction
+├── internal/
+│   └── dispatch.mcfunction     ← Ortak eylem yönlendirici
+├── events/
+│   ├── process.mcfunction
+│   └── exec.mcfunction
+├── config/
+│   ├── load.mcfunction
+│   ├── list.mcfunction
+│   ├── get.mcfunction
+│   ├── set.mcfunction
+│   ├── set_str.mcfunction
+│   ├── reset.mcfunction
+│   └── run_on_load.mcfunction
+├── version/
+│   └── announce.mcfunction
+├── messages/
+├── sound/
+├── player/
+├── effect/
+├── item/
+├── xp/
+├── score/
+├── bossbar/
+├── entity/
+├── waypoint/
+├── timer/
+└── command/
 
-<hr>
+---
 
-<h2 id="katkıda-bulunma">🤝 Katkıda Bulunma</h2>
+## Katkıda Bulunma
 
-<p>
-  🔗 <a href="https://github.com/asn44nb/EventCoreSystem-Datapack/">
-  https://github.com/asn44nb/EventCoreSystem-Datapack/
-  </a>
-</p>
+> [!NOTE]
+> Bu depo kalıcı olarak arşivlenmiştir. Katkılar artık kabul edilmemektedir.
 
-<ul>
-  <li>Fork</li>
-  <li>Branch aç</li>
-  <li>Commit</li>
-  <li>PR gönder</li>
-</ul>
+Depo yalnızca referans amaçlı fork'lanabilir.
 
-<hr>
+---
 
-<h2 id="lisans">📜 Lisans</h2>
+## Lisans
 
-<p>MIT License © 2025 Legends11</p>
+MIT License © 2025 Legends11
 
-<hr>
+---
 
-<h2>Destek</h2>
+## Destek
 
-<ul>
-  <li>Issues: <a href="https://github.com/asn44nb/EventCoreSystem-Datapack/issues">GitHub Issues</a></li>
-  <li>Repo: <a href="https://github.com/asn44nb/EventCoreSystem-Datapack/">GitHub Repository</a></li>
-</ul>
+- Issues: [GitHub Issues](https://github.com/asn44nb/EventCoreSystem-Datapack/issues)
+- Depo: [GitHub Deposu](https://github.com/asn44nb/EventCoreSystem-Datapack/)
+
+---
 
 <p align="center">
   <b>EventCore — kontrol sende.</b>
