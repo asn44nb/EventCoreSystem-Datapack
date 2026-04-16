@@ -1,4 +1,4 @@
-markdown<h1 align="center">🎮 EventCore Sistemi</h1>
+<h1 align="center">🎮 EventCore Sistemi</h1>
 
 <p align="center">
   <b>Gelişmiş • Modüler • Vanilla Dostu</b><br>
@@ -19,14 +19,14 @@ markdown<h1 align="center">🎮 EventCore Sistemi</h1>
 
 ---
 
-> [!CAUTION]
-> **Bu depo kalıcı olarak arşivlenmiştir.**
-> Projenin geliştirilmesi durdurulmuştur. Gelecekte herhangi bir sürüm,
-> güncelleme veya devam projesi planlanmamaktadır. Depo yalnızca referans
-> amaçlı olduğu gibi korunmaktadır. Yeni sorunlar, pull request'ler veya
-> katkılar incelenmeyecek ya da kabul edilmeyecektir.
->
-> **12 Nisan 2026 tarihinde kalıcı olarak arşivlendi.**
+## ⚠️ Arşivlendi
+
+Bu depo arşivlenmiştir ve artık geliştirilmeyecektir.
+
+Son dönemde dijital içerikler ve güvenlik konularına yönelik tartışmalar nedeniyle önlem amaçlı arşivlenmiştir.
+
+Kodlar referans ve eğitim amaçlı olarak erişilebilir durumda bırakılmıştır.
+
 
 ---
 
